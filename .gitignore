@@ -1,0 +1,14 @@
+# Ignore everything by default
+*
+
+# Specific Ignores
+/.venv/
+/.idea/
+
+# Exceptions
+# Re-include the .gitignore file itself
+!.gitignore
+# Re-include the main README file
+!README.md
+# Re-include chapter notebooks
+!chapter_*.ipynb
