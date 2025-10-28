@@ -12,3 +12,5 @@
 !README.md
 # Re-include chapter notebooks
 !chapter_*.ipynb
+# Re-include support_function.py file
+!support_functions.py
