@@ -17,6 +17,7 @@ from statsmodels.stats.outliers_influence \
 from statsmodels.stats.anova import anova_lm
 
 from sklearn import preprocessing
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 
 from ISLP import load_data
 
@@ -280,3 +281,17 @@ def create_DataFrame_from_model_results_nonlinear(models, predictors):
     # --- 4. Create the final DataFrame ---
     results_df = pd.DataFrame(results_list).set_index('predictor')
     return results_df
+
+def confusion_matrix_binary(y_true, y_pred, positive_label, negative_label):
+    """
+    :param y_true: np.array true labels
+    :param y_pred: np.array predicted labels
+    :param positive_label: str positive label
+    :param negative_label: str negative label
+    :return: pd.DataFrame confusion matrix
+    """
+    cm = confusion_matrix(y_true, y_pred)
+    df = pd.DataFrame(cm.T, columns=[negative_label, positive_label])
+    df.index = pd.Index([negative_label, positive_label], name='Predicted')
+    df.columns.name = 'Truth'
+    return df
