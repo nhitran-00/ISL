@@ -14,3 +14,8 @@
 !chapter_*.ipynb
 # Re-include support_function.py file
 !support_functions.py
+# Re-include lab notebooks
+!lab_*.ipynb
+
+# Re-include requirements.txt file
+!requirements.txt
